@@ -6,9 +6,9 @@ pipeline {
   }
 
   parameters {
-    string(name: 'REPO_URL', defaultValue: 'https://github.com/smithasep18/AppointmentService.git', description: 'Git repository URL to clone')
+    string(name: 'REPO_URL', defaultValue: 'https://github.com/smithasep18/patient-portal.git', description: 'Git repository URL to clone')
     string(name: 'BRANCH', defaultValue: 'main', description: 'Branch name to clone')
-    string(name: 'DOCKER_REGISTRY', defaultValue: 'smitha18/appointmentservice', description: 'Docker Hub repository name (e.g. smitha18/appointmentservice)')
+    string(name: 'DOCKER_REGISTRY', defaultValue: 'smitha18/patient-portal', description: 'Docker Hub repository name (e.g. smitha18/patient-portal)')
     string(name: 'IMAGE_TAG', defaultValue: "${env.BUILD_NUMBER}", description: 'Docker image tag')
     string(name: 'DOCKER_CREDENTIALS_ID', defaultValue: 'docker-hub', description: 'Jenkins credentials ID for Docker Hub login')
   }
