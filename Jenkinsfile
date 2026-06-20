@@ -61,11 +61,11 @@ pipeline {
           def imageName = "${params.DOCKER_REGISTRY}:${params.IMAGE_TAG}"
 
           withCredentials([usernamePassword(credentialsId: params.DOCKER_CREDENTIALS_ID, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-            sh '''
-              echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" --password-stdin
+            sh """
+              echo \"$DOCKER_PASS\" | docker login --username \"$DOCKER_USER\" --password-stdin
               docker push ${imageName}
               docker logout
-            '''
+            """
           }
         }
       }
